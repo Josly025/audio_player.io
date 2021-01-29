@@ -7,6 +7,9 @@ body {
   font-size: 14px;
   margin: 2rem;
 }
+header {
+  margin-bottom: 2rem;
+}
 
 .btn {
   transition: all 0.2s;
@@ -32,4 +35,12 @@ body {
 
 .search-btn:active {
   transform: translateY(0.1rem);
+}
+
+.controls {
+  margin-top: 2rem;
+}
+
+.tracks {
+  letter-spacing: 0.2rem;
 }
