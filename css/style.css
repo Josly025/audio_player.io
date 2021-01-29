@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 14px;
+  margin: 2rem;
+}
+
+.btn {
+  transition: all 0.2s;
+  font-size: 2.5rem;
+  cursor: pointer;
+  margin: 2rem;
+}
+
+.btn:active {
+  transform: translateY(0.1rem);
+}
+
+.progress {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.search-btn {
+  transition: all 0.2s;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+.search-btn:active {
+  transform: translateY(0.1rem);
+}
