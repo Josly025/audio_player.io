@@ -1,10 +1,12 @@
 const search = document.getElementById("search");
-const play = document.getElementById("play");
-const pause = document.getElementById("pause");
+const playBtn = document.getElementById("playBtn");
+const pauseBtn = document.getElementById("pauseBtn");
 const player = document.getElementById("player");
 const searchBtn = document.getElementById("search-btn");
 const audio = document.getElementById("audio");
 const audioSource = document.getElementById("audioSource");
+const progressBar = document.getElementById("progress-bar");
+
 searchBtn.addEventListener("click", searchTrack);
 
 function searchTrack(e) {
@@ -28,12 +30,11 @@ function searchTrack(e) {
       audio.setAttribute("src", `${tracks[0].preview}`);
       let output = ` <h1 class="tracks">${tracks[0].album.title}</h1>
              <h2 class="tracks">${tracks[0].artist.name}</h2>
-             <img class="uk-border-rounded uk-margin-small-top uk-margin-small-bottom" data-src="${tracks[0].album.cover}" width="auto" height="auto"  uk-img>
+             <img class="uk-border-rounded uk-margin-small-top uk-margin-small-bottom" data-src="${tracks[0].album.cover_medium}" width="auto" height="100%"  uk-img>
 
              `;
 
       play.innerHTML = output;
-      playAudio();
     })
     .catch(function (error) {
       console.error(error);
@@ -42,5 +43,13 @@ function searchTrack(e) {
 }
 
 // function playAudio() {
-//   audio.play();
+
 // }
+
+playBtn.addEventListener("click", function () {
+  audio.play();
+});
+
+pauseBtn.addEventListener("click", function () {
+  audio.pause();
+});
