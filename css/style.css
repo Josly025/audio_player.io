@@ -7,8 +7,14 @@ body {
   font-size: 14px;
   margin: 2rem;
 }
+
 header {
   margin-bottom: 2rem;
+  /* background-image: url("../images/audio.png"); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-color: ;
 }
 
 .btn {
@@ -43,4 +49,15 @@ header {
 
 .tracks {
   letter-spacing: 0.2rem;
+}
+
+.title {
+  text-transform: uppercase !important;
+  letter-spacing: 0.1rem;
+}
+
+.sub_title {
+  text-transform: uppercase !important;
+  letter-spacing: 0.1rem;
+  font-size: 1.5rem;
 }
