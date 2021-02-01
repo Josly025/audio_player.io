@@ -4,8 +4,8 @@
 }
 
 body {
-  font-size: 14px;
-  margin: 1rem;
+  font-size: 16px;
+
   background-image: url("../images/marbel.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -52,12 +52,13 @@ header {
 }
 
 .title {
-  text-transform: uppercase !important;
-  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: 300;
 }
 
 .sub_title {
-  text-transform: uppercase !important;
+  text-transform: uppercase;
   letter-spacing: 0.1rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }

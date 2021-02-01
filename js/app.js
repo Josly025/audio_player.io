@@ -6,12 +6,12 @@ const searchBtn = document.getElementById("search-btn");
 const audio = document.getElementById("audio");
 const audioSource = document.getElementById("audioSource");
 const progressBar = document.getElementById("progress-bar");
+const table = document.querySelector(".table");
 
 searchBtn.addEventListener("click", searchTrack);
 
 function searchTrack(e) {
   let artist = search.value;
-  console.log("hello");
   console.log(artist);
   const apiCall = {
     method: "GET",
@@ -38,7 +38,20 @@ function searchTrack(e) {
             </div>
             </div>
              `;
+      let outputTable = "";
 
+      tracks.map((track, i) => {
+        outputTable += `
+          <tr>
+            <td>${tracks[i].artist.name}</td>
+            <td>${tracks[i].album.title}</td>
+             <td><img class="uk-preserve-width uk-border-circle" src=${tracks[i].album.cover_small} width="40" alt=""></td>
+            <td><button class="uk-button uk-button-default" type="button">Button</button></td>
+        </tr>
+         `;
+      });
+
+      table.innerHTML = outputTable;
       play.innerHTML = output;
     })
     .catch(function (error) {
@@ -47,21 +60,24 @@ function searchTrack(e) {
   e.preventDefault();
 }
 
+let currentValue = 0;
 playBtn.addEventListener("click", function () {
-  let currentValue = 0;
-
-  const timer = setInterval(function () {
-    console.log("hello");
-    currentValue++;
-    if (timer === 30) {
-      clearInterval(timer);
-    }
-  }, 30 * 1000);
-
-  progressBar.setAttribute("value", currentValue);
   audio.play();
+  //
+  //
+  if (currentValue === 30) {
+    currentValue += 0;
+  } else {
+    setInterval(function () {
+      currentValue += 1;
+      console.log("ran");
+      console.log(currentValue);
+      progressBar.setAttribute("value", currentValue);
+    }, 1000);
+  }
 });
 
 pauseBtn.addEventListener("click", function () {
+  clearInterval(currentValue);
   audio.pause();
 });
