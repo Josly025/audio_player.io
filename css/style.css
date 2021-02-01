@@ -37,8 +37,14 @@ header {
   transition: all 0.2s;
   cursor: pointer;
   margin-top: 2rem;
+  transition: 0.7s;
+  letter-spacing: 0.1rem;
 }
 
+.search-btn:hover {
+  background-color: #1e87f0 !important;
+  color: #fff !important;
+}
 .search-btn:active {
   transform: translateY(0.1rem);
 }
