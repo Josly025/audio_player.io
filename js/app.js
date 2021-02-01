@@ -30,7 +30,6 @@ function searchTrack(e) {
       audio.setAttribute("src", `${tracks[0].preview}`);
       let output = ` <h1 class="tracks">${tracks[0].album.title}</h1>
              <h2 class="tracks">${tracks[0].artist.name}</h2>
-
                 <div class="uk-inline-clip uk-transition-toggle uk-light" tabindex="0">
              <img class="uk-border-rounded uk-margin-small-top uk-margin-small-bottom" data-src="${tracks[0].album.cover_medium}" width="auto" height="100%"  uk-img>
                 <div class="uk-position-center">
@@ -48,21 +47,21 @@ function searchTrack(e) {
   e.preventDefault();
 }
 
-// function playAudio() {
-
-// }
-
 playBtn.addEventListener("click", function () {
+  let currentValue = 0;
+
+  const timer = setInterval(function () {
+    console.log("hello");
+    currentValue++;
+    if (timer === 30) {
+      clearInterval(timer);
+    }
+  }, 30 * 1000);
+
+  progressBar.setAttribute("value", currentValue);
   audio.play();
 });
 
 pauseBtn.addEventListener("click", function () {
   audio.pause();
 });
-
-// progressBar.setValue(`${newValue}`)
-
-let newValue = 0;
-setTimeout(function () {
-  newValue += 1;
-}, 1000);

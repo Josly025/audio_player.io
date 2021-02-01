@@ -5,16 +5,16 @@
 
 body {
   font-size: 14px;
-  margin: 2rem;
+  margin: 1rem;
+  background-image: url("../images/marbel.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2rem;
 }
 
 header {
   margin-bottom: 2rem;
-  /* background-image: url("../images/audio.png"); */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-color: ;
 }
 
 .btn {
