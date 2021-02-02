@@ -17,6 +17,10 @@ header {
   margin-bottom: 2rem;
 }
 
+input {
+  color: #1e87f0 !important;
+}
+
 .btn {
   transition: all 0.2s;
   font-size: 2.5rem;
@@ -59,12 +63,16 @@ header {
 
 .title {
   text-transform: uppercase;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.5rem;
   font-weight: 300;
 }
 
 .sub_title {
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  font-size: 1rem;
+  letter-spacing: 0.2rem;
+  font-size: 1.2rem;
+}
+
+.secondary {
+  color: #1e87f0 !important;
 }

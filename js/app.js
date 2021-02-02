@@ -9,7 +9,7 @@ const progressBar = document.getElementById("progress-bar");
 const forwardBtn = document.getElementById("forwardBtn");
 const backwardBtn = document.getElementById("backwardBtn");
 const table = document.querySelector(".table");
-
+const counter = document.getElementById("counter");
 searchBtn.addEventListener("click", searchTrack);
 
 //number for index of data
@@ -89,6 +89,7 @@ function searchTrack(e) {
 let currentValue = 0;
 playBtn.addEventListener("click", function () {
   audio.play();
+  UIkit.countdown(counter).start();
   //
   //
   // if (currentValue === 30) {
@@ -104,6 +105,6 @@ playBtn.addEventListener("click", function () {
 });
 
 pauseBtn.addEventListener("click", function () {
-  clearInterval(currentValue);
+  UIkit.countdown(counter).stop();
   audio.pause();
 });
