@@ -76,8 +76,23 @@ input {
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   font-size: 1.2rem;
+  padding: 0.25rem;
 }
 
 .secondary {
   color: #1e87f0 !important;
+}
+
+/* timer */
+
+.dial {
+  height: 26rem;
+  width: 30rem;
+  top: 13.75rem;
+  right: 22.5rem;
+  position: absolute;
+}
+
+#duration {
+  margin: 0rem;
 }

@@ -11,6 +11,11 @@ const backwardBtn = document.getElementById("backwardBtn");
 const table = document.querySelector(".table");
 const counter = document.getElementById("counter");
 searchBtn.addEventListener("click", searchTrack);
+///new
+const durationInput = document.querySelector("#duration");
+const startButton = document.querySelector("#start");
+const pauseButton = document.querySelector("#pause");
+const circle = document.querySelector("circle");
 
 //number for index of data
 let number = 0;
@@ -57,7 +62,7 @@ function searchTrack(e) {
       let output = ` <h1 class="tracks">${tracks[number].title}</h1>
              <h2 class="tracks">${tracks[number].artist.name}</h2>
                 <div class="uk-inline-clip uk-transition-toggle uk-light" tabindex="0">
-             <img class="uk-border-rounded uk-margin-small-top uk-margin-small-bottom" data-src="${tracks[number].album.cover_medium}" width="auto" height="100%"  uk-img>
+             <img class="uk-border-rounded uk-margin-large-top uk-margin-large-bottom" data-src="${tracks[number].album.cover_medium}" width="auto" height="100%"  uk-img>
              
                 <div class="uk-position-center">
                 <div class="uk-transition-slide-top-small"><h4 class="uk-margin-remove">${tracks[number].album.title}</h4></div>
@@ -88,23 +93,22 @@ function searchTrack(e) {
 }
 
 let currentValue = 0;
-playBtn.addEventListener("click", function () {
-  audio.play();
-  UIkit.countdown(counter).start();
 
-  if (currentValue === 30) {
-    currentValue += 0;
-  } else {
-    setInterval(function () {
-      currentValue += 1;
-      console.log("ran");
-      console.log(currentValue);
-      progressBar.setAttribute("value", currentValue);
-    }, 1000);
-  }
-});
+const perimeter = circle.getAttribute("r") * 2 * Math.PI;
+circle.setAttribute("stroke-dasharray", perimeter);
 
-pauseBtn.addEventListener("click", function () {
-  UIkit.countdown(counter).stop();
-  audio.pause();
+let duration;
+const timer = new Timer(durationInput, startButton, pauseButton, {
+  onStart(totalDuration) {
+    duration = totalDuration;
+  },
+  onTick(timeRemaining) {
+    circle.setAttribute(
+      "stroke-dashoffset",
+      (perimeter * timeRemaining) / duration - perimeter
+    );
+  },
+  onComplete() {
+    duractionInput.setValue("00.30");
+  },
 });
