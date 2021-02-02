@@ -23,6 +23,11 @@ input {
 
 #footer {
   letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+
+#duration {
+  margin: 0rem;
 }
 
 .btn {
@@ -84,15 +89,14 @@ input {
 }
 
 /* timer */
-
 .dial {
-  height: 26rem;
+  height: 25rem;
   width: 30rem;
-  top: 13.75rem;
-  right: 22.5rem;
-  position: absolute;
+  top: 34rem;
+  left: 2.5rem;
+  position: relative;
 }
 
-#duration {
-  margin: 0rem;
+.custom-padding {
+  margin-top: -20rem;
 }
