@@ -22,8 +22,7 @@
       >
         <div>
           <div class="uk-card uk-card-secondary uk-card-body uk-padding-large">
-
-            <h1><span class="uk-text-background title">Modish </span></h1>
+            <h1><span class="uk-text-background title">Modish Music</span></h1>
           </div>
         </div>
         <div>
@@ -79,8 +78,10 @@
             <!--render here-->
             <div id="play"></div>
             <div class="controls">
-              
-                 <span  class="uk-countdown-number uk-countdown-seconds">30</span>
+              <div uk-countdown="date: 2021-02-02T00:00:30+00:00">
+                <span  class="uk-countdown-number uk-countdown-seconds">:</span>
+              </div>
+                 
               
                 
               <progress
@@ -119,6 +120,9 @@
         
     </tbody>
 </table>
+
+<!--Footer-->
+<div id="footer" class="uk-margin uk-card uk-card-secondary uk-text-center uk-text-primary uk-card-body">Modish Music &copy;</div>
 
     <!--scripts-->
     <script src="./js/app.js"></script>

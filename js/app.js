@@ -54,13 +54,14 @@ function searchTrack(e) {
 
       console.log(tracks);
       audio.setAttribute("src", `${tracks[number].preview}`);
-      let output = ` <h1 class="tracks">${tracks[number].album.title}</h1>
+      let output = ` <h1 class="tracks">${tracks[number].title}</h1>
              <h2 class="tracks">${tracks[number].artist.name}</h2>
                 <div class="uk-inline-clip uk-transition-toggle uk-light" tabindex="0">
              <img class="uk-border-rounded uk-margin-small-top uk-margin-small-bottom" data-src="${tracks[number].album.cover_medium}" width="auto" height="100%"  uk-img>
+             
                 <div class="uk-position-center">
                 <div class="uk-transition-slide-top-small"><h4 class="uk-margin-remove">${tracks[number].album.title}</h4></div>
-                <div class="uk-transition-slide-bottom-small"><h4 class="uk-margin-remove">${tracks[number].artist.name}</h4></div>
+                <div class="uk-transition-slide-bottom-small"><h4 class="uk-margin-remove">Album</h4></div>
             </div>
             </div>
              `;
@@ -90,18 +91,17 @@ let currentValue = 0;
 playBtn.addEventListener("click", function () {
   audio.play();
   UIkit.countdown(counter).start();
-  //
-  //
-  // if (currentValue === 30) {
-  //   currentValue += 0;
-  // } else {
-  //   setInterval(function () {
-  //     currentValue += 1;
-  //     console.log("ran");
-  //     console.log(currentValue);
-  //     progressBar.setAttribute("value", currentValue);
-  //   }, 1000);
-  // }
+
+  if (currentValue === 30) {
+    currentValue += 0;
+  } else {
+    setInterval(function () {
+      currentValue += 1;
+      console.log("ran");
+      console.log(currentValue);
+      progressBar.setAttribute("value", currentValue);
+    }, 1000);
+  }
 });
 
 pauseBtn.addEventListener("click", function () {
