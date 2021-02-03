@@ -68,7 +68,12 @@ input {
 }
 
 .tracks {
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.3rem;
+  margin-bottom: 2rem;
+}
+
+.tracks-main {
+  color: #1e87f0 !important;
 }
 
 .title {

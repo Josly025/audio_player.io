@@ -57,7 +57,7 @@ window.onload = (e) => {
 
       console.log(tracksOne);
       audio.setAttribute("src", `${tracksOne[number].preview}`);
-      let outputOne = ` <h1 class="tracks">${tracksOne[number].title}</h1>
+      let outputOne = ` <h1 class="tracks tracks-main">${tracksOne[number].title}</h1>
              <h2 class="tracks uk-margin-medium-bottom extra">${tracksOne[number].artist.name}</h2>
                 <div class="uk-inline-clip uk-transition-toggle uk-light" tabindex="0">
              <img id="ablum-cover" class="uk-border-rounded uk-margin-large-top uk-margin-large-bottom" data-src="${tracksOne[number].album.cover_medium}" width="auto" height="100%"  uk-img>
