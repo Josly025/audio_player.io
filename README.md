@@ -2,7 +2,7 @@
 
 ## Modish Music
 
-![Modish_Music](./images_2/modish.png)
+![Modish_Music](./images/modish.png)
 
 ## Description \*\*\*
 
