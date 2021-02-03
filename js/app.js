@@ -169,7 +169,8 @@ const radius = document.getElementsByTagName("circle")[0];
 console.log(radius);
 function myFunction(circa) {
   if (circa.matches) {
-    radius.setAttribute("r", 140);
+    radius.setAttribute("r", 138);
+    radius.setAttribute("cy", 160);
   } else {
     console.log("we good");
   }
@@ -177,4 +178,4 @@ function myFunction(circa) {
 
 var circa = window.matchMedia("(max-width: 400px)");
 myFunction(circa); // Call listener function at run time
-circa.addListener(myFunction);
+circa.addEventListener(myFunction);
