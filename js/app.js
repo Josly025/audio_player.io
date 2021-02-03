@@ -80,7 +80,7 @@ function intialRender() {
         outputTableOne += `
           <tr>
             <td>${tracksOne[i].artist.name}</td>
-            <td>${tracksOne[i].album.title}</td>
+            <td>${tracksOne[i].title}</td>
              <td><img class="uk-preserve-width uk-border-circle" src=${tracksOne[i].album.cover_small} width="50" alt=""></td>
             <td><button class="uk-button uk-button-default" type="button"><a href=${tracksOne[i].link}>Source</a></button></td>
         </tr>
@@ -132,7 +132,7 @@ function searchTrack(e) {
         outputTable += `
           <tr>
             <td>${tracks[i].artist.name}</td>
-            <td>${tracks[i].album.title}</td>
+            <td>${tracks[i].title}</td>
              <td><img class="uk-preserve-width uk-border-circle" src=${tracks[i].album.cover_small} width="50" alt=""></td>
             <td><button class="uk-button uk-button-default" type="button"><a href=${tracks[i].link}>Source</a></button></td>
         </tr>
@@ -171,7 +171,7 @@ const timer = new Timer(durationInput, startButton, pauseButton, {
 
 // Media Query for SVG Element
 const radius = document.getElementsByTagName("circle")[0];
-console.log(radius);
+
 function myFunction(circa) {
   if (circa.matches) {
     radius.setAttribute("r", 138);
