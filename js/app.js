@@ -171,7 +171,7 @@ const timer = new Timer(durationInput, startButton, pauseButton, {
 
 // Media Query for SVG Element
 const radius = document.getElementsByTagName("circle")[0];
-
+let circa = window.matchMedia("(max-width: 400px)");
 function myFunction(circa) {
   if (circa.matches) {
     radius.setAttribute("r", 138);
@@ -181,6 +181,5 @@ function myFunction(circa) {
   }
 }
 
-var circa = window.matchMedia("(max-width: 400px)");
 myFunction(circa); // Call listener function at run time
 circa.addEventListener(myFunction);
