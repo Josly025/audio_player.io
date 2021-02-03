@@ -19,9 +19,12 @@ const circle = document.querySelector("circle");
 
 //number for index of data
 let number = 0;
+
 forwardBtn.addEventListener("click", function () {
   if (number >= 0 && number < 20) {
     number += 1;
+
+    intialRender();
     searchTrack();
   } else {
     number = 0;
@@ -31,14 +34,17 @@ forwardBtn.addEventListener("click", function () {
 backwardBtn.addEventListener("click", function () {
   if (number > 0 && number <= 20) {
     number -= 1;
+
+    intialRender();
     searchTrack();
   } else {
     number = 0;
   }
-  searchTrack();
 });
 
-window.onload = (e) => {
+window.onload = intialRender();
+
+function intialRender() {
   let artistOne = "Drake";
   console.log(artistOne);
   const apiCall = {
@@ -87,8 +93,7 @@ window.onload = (e) => {
     .catch(function (error) {
       console.error(error);
     });
-  e.preventDefault();
-};
+}
 
 /// Run API call after a search
 function searchTrack(e) {
@@ -110,7 +115,7 @@ function searchTrack(e) {
 
       console.log(tracks);
       audio.setAttribute("src", `${tracks[number].preview}`);
-      let output = ` <h1 class="tracks">${tracks[number].title}</h1>
+      let output = ` <h1 class="tracks tracks-main">${tracks[number].title}</h1>
              <h2 class="tracks uk-margin-medium-bottom">${tracks[number].artist.name}</h2>
                 <div class="uk-inline-clip uk-transition-toggle uk-light" tabindex="0">
              <img id="album-cover" class="uk-border-rounded uk-margin-large-top uk-margin-large-bottom" data-src="${tracks[number].album.cover_medium}" width="auto" height="100%"  uk-img>
