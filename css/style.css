@@ -28,6 +28,7 @@ input {
 
 #duration {
   margin: 0rem;
+  display: none;
 }
 
 .btn {
@@ -92,11 +93,77 @@ input {
 .dial {
   height: 25rem;
   width: 30rem;
-  top: 34rem;
+  top: 13.5rem;
   left: 2.5rem;
   position: relative;
 }
 
-.custom-padding {
-  margin-top: -20rem;
+.custom {
+  margin-top: -22rem;
+}
+@media only screen and (max-width: 1200px) {
+  .dial {
+    height: 25rem;
+    width: 30rem;
+    top: 11.5rem;
+    left: 2.5rem;
+    position: relative;
+  }
+  .btn {
+    margin-top: 4rem;
+  }
+}
+
+@media only screen and (max-width: 970px) {
+  .dial {
+    height: 25rem;
+    width: 30rem;
+    top: 7.75rem;
+    left: 2.5rem;
+    position: relative;
+  }
+  .custom {
+    margin-top: -25rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .dial {
+    height: 25rem;
+    width: 30rem;
+    top: 4.75rem;
+    left: 2rem;
+    position: relative;
+  }
+  .custom {
+    margin-top: -28rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .dial {
+    height: 27rem;
+    width: 25rem;
+    top: -4rem;
+    left: -1rem;
+    position: relative;
+  }
+  body {
+    margin: 0rem;
+    padding: 2rem 0rem;
+  }
+  .custom {
+    margin-top: -24rem;
+  }
+
+  .btn {
+    font-size: 2rem;
+    cursor: pointer;
+    display: inline;
+    margin: 2rem 1rem;
+  }
+
+  #album-cover {
+    height: 30%;
+  }
 }
