@@ -16,8 +16,8 @@ class Timer {
   start = () => {
     if (this.onStart) {
       this.onStart(this.timeRemaining);
-      audio.play();
     }
+    audio.play();
     this.tick();
     this.interval = setInterval(this.tick, 1000);
   };
@@ -31,7 +31,7 @@ class Timer {
     if (this.timeRemaining <= 0) {
       this.pause();
       if (this.onComplete) {
-        this.onComplete();
+        this.interval = setInterval(this.tick, 1000);
       }
     } else {
       this.timeRemaining = this.timeRemaining - 0.01;

@@ -19,13 +19,15 @@ const circle = document.querySelector("circle");
 
 //number for index of data
 let number = 0;
-
+let artistOne = "Drake";
 forwardBtn.addEventListener("click", function () {
   if (number >= 0 && number < 20) {
     number += 1;
-
-    intialRender();
-    searchTrack();
+    if (artistOne === "Drake") {
+      intialRender();
+    } else {
+      searchTrack();
+    }
   } else {
     number = 0;
   }
@@ -34,9 +36,11 @@ forwardBtn.addEventListener("click", function () {
 backwardBtn.addEventListener("click", function () {
   if (number > 0 && number <= 20) {
     number -= 1;
-
-    intialRender();
-    searchTrack();
+    if (artistOne === "Drake") {
+      intialRender();
+    } else {
+      searchTrack();
+    }
   } else {
     number = 0;
   }
@@ -45,7 +49,6 @@ backwardBtn.addEventListener("click", function () {
 window.onload = intialRender();
 
 function intialRender() {
-  let artistOne = "Drake";
   console.log(artistOne);
   const apiCall = {
     method: "GET",
@@ -97,6 +100,7 @@ function intialRender() {
 
 /// Run API call after a search
 function searchTrack(e) {
+  artistOne = "";
   let artist = search.value;
   console.log(artist);
   const apiCall = {
@@ -166,6 +170,7 @@ const timer = new Timer(durationInput, startButton, pauseButton, {
   },
   onComplete() {
     window.clearTimeout();
+    setInterval(this.tick, 1000);
   },
 });
 
@@ -182,4 +187,4 @@ function myFunction(circa) {
 }
 
 myFunction(circa); // Call listener function at run time
-circa.addEventListener(myFunction);
+circa.addEventListener(circa, myFunction);
