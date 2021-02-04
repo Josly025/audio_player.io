@@ -30,6 +30,9 @@ input {
   margin: 0rem;
   display: none;
 }
+#vol-control {
+  margin-top: 2rem;
+}
 
 .btn {
   transition: all 0.2s;
