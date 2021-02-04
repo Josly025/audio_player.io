@@ -99,8 +99,9 @@
               <i id="pause" class="fas fa-pause btn"></i>
              
               <i id="forwardBtn" class="fas fa-forward btn secondary"></i>
+               <input id="vol-control" type="range" min="0" max="100" step="2" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
             </div>
-          
+            <!--audio control-->
           <input  id="duration" value="00.30" />
         </div>
       </div>

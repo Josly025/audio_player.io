@@ -188,3 +188,11 @@ function myFunction(circa) {
 
 myFunction(circa); // Call listener function at run time
 circa.addEventListener(circa, myFunction);
+
+//Control Audio Volume
+window.SetVolume = function (val) {
+  let song = document.getElementById("audio");
+  console.log("Before: " + song.volume);
+  song.volume = val / 100;
+  console.log("After: " + song.volume);
+};
