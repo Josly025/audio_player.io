@@ -138,7 +138,7 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   height: 0rem;
   width: 28rem;
   bottom: 26rem;
-  left: 32%;
+  left: 32.5%;
   position: relative;
 }
 .base-timer__svg {
