@@ -102,82 +102,6 @@ input {
   color: #1e87f0 !important;
 }
 
-@media only screen and (max-width: 1200px) {
-  .dial {
-    height: 25rem;
-    width: 30rem;
-    top: 11.5rem;
-    left: 2.5rem;
-    position: relative;
-  }
-  .btn {
-    margin-top: 4rem;
-  }
-}
-
-@media only screen and (max-width: 970px) {
-  .base-timer {
-    height: 25rem;
-    width: 30rem;
-    top: 7.75rem;
-    left: 2.5rem;
-    position: relative;
-  }
-  .custom {
-    margin-top: -25rem;
-  }
-}
-
-@media only screen and (max-width: 970px) {
-  .base-timer {
-    height: 25rem;
-    width: 30rem;
-    top: 7.75rem;
-    left: 2.5rem;
-    position: relative;
-  }
-  .custom {
-    margin-top: -25rem;
-  }
-}
-@media only screen and (max-width: 775px) {
-  #vol-control {
-    margin: 1rem 40% 0 25%;
-    width: 50%;
-  }
-}
-
-@media only screen and (max-width: 550px) {
-  .base-timer {
-    height: 28rem;
-    width: 20rem;
-    top: -6rem;
-    left: 0rem;
-    position: relative;
-  }
-  body {
-    margin: 0rem;
-    padding: 2rem 0rem;
-  }
-  .custom {
-    margin-top: -24rem;
-  }
-
-  .btn {
-    font-size: 2rem;
-    cursor: pointer;
-    display: inline;
-    margin: 2rem 1rem;
-  }
-  .track {
-    margin-bottom: 8rem;
-  }
-  #vol-control {
-    margin: 2rem 20% 0 20%;
-    width: 60%;
-  }
-}
-
 /* volume control */
 input[type="range"] {
   height: 0rem;
@@ -213,8 +137,8 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
 .base-timer {
   height: 0rem;
   width: 28rem;
-  bottom: 24rem;
-  left: 16rem;
+  bottom: 26rem;
+  left: 32%;
   position: relative;
 }
 .base-timer__svg {
@@ -241,4 +165,103 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
 
 .base-timer__path-remaining.arc {
   color: #1e87f0;
+}
+
+/********mobile responsiveness **/
+@media only screen and (max-width: 1300px) {
+  .base-timer {
+    height: 0rem;
+    width: 28rem;
+    bottom: 26rem;
+    left: 30%;
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .base-timer {
+    height: 0rem;
+    width: 28rem;
+    bottom: 24rem;
+    left: 29%;
+    position: relative;
+  }
+  .btn {
+    margin-top: 4rem;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .base-timer {
+    height: 0rem;
+    width: 28rem;
+    bottom: 24rem;
+    left: 25%;
+    position: relative;
+  }
+  .custom {
+    margin-top: -25rem;
+  }
+}
+
+@media only screen and (max-width: 970px) {
+  .base-timer {
+    height: 0rem;
+    width: 28rem;
+    bottom: 26rem;
+    left: 30%;
+    position: relative;
+  }
+  .custom {
+    margin-top: -25rem;
+  }
+}
+@media only screen and (max-width: 775px) {
+  .base-timer {
+    height: 0rem;
+    width: 28rem;
+    bottom: 24rem;
+    left: 15%;
+    position: relative;
+  }
+  #vol-control {
+    margin: 1rem 40% 4rem 25%;
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  body {
+    margin: 0rem;
+    padding: 2rem 0rem;
+  }
+  .custom {
+    margin-top: -24rem;
+  }
+
+  .btn {
+    font-size: 2rem;
+    cursor: pointer;
+    display: inline;
+    margin: 2rem 1rem;
+  }
+
+  .track {
+    margin-bottom: 8rem;
+  }
+
+  .base-timer {
+    height: 0rem;
+    width: 20rem;
+    bottom: 38rem;
+    left: 0%;
+    position: relative;
+  }
+  .tracks-main {
+    margin-top: 4rem;
+  }
+  #vol-control {
+    margin: 5rem 40% 8rem 25%;
+    width: 50%;
+  }
 }
