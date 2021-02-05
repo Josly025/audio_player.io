@@ -118,7 +118,7 @@ function searchTrack(e) {
       console.log(tracks);
       audio.setAttribute("src", `${tracks[number].preview}`);
       let output = ` <h1 class="tracks tracks-main">${tracks[number].title}</h1>
-             <h2 class="tracks uk-margin-medium-bottom">${tracks[number].artist.name}</h2>
+             <h2 class="tracks tracks-sub">${tracks[number].artist.name}</h2>
                 <div class="uk-inline-clip uk-transition-toggle uk-light" tabindex="0">
              <img id="album-cover" class="uk-border-rounded uk-margin-large-top uk-margin-large-bottom" data-src="${tracks[number].album.cover_medium}" width="auto" height="100%"  uk-img>
              
