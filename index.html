@@ -59,6 +59,7 @@
   </br>
 
     <!--audio-->
+     <!-- <div id="play" class="custom"> -->
     <div id="audioGrid" class="uk-grid-collapse uk-child-width-expand@s uk-text-center" uk-grid>
      <div class="uk-background-secondary uk-light">
           <!--Card-->
@@ -68,31 +69,22 @@
               <source id="audioSource" src="#" type="audio/ogg" />
             </audio>
             <!--render here-->
-         
-               <div class="controls ">
-              <div class="timer">
-              <svg class="dial">
-                      <circle
-                     
-                        fill="transparent"
-                        stroke="#1E87F0"
-                        stroke-width="15"
-                        r="192"
-                        cx="0"
-                        cy="200"
-                        transform="rotate(-90 100 100)"
-                      />
-              <div id="play" class="custom">
-                    </svg>
+                  <div class="play"></div>
+                    <div class="base-timer">
+                      <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <g class="base-timer__circle">
+                          <circle class="base-timer__path-elapsed" cx="50" cy="50" r="192"></circle>
+                          <path id="base-timer-path-remaining" stroke-dasharray="283" class="base-timer__path-remaining arc" d="
+                                  M 50, 50
+                                  m -45, 0
+                                  a 45,45 0 1,0 90,0
+                                  a 45,45 0 1,0 -90,0
+                                  "></path>
+                        </g>
+                      </svg>
+                    </div>
                   </div>
-                </div>
-            </div>
-              <!-- <progress
-                id="progress-bar"
-                class="uk-progress uk-width-1-2 uk-progress-striped progress"
-                value="0"
-                max="30"
-              ></progress> -->
+              <!--Control btns-->
               <i id="backwardBtn" class="fas fa-backward btn secondary"></i>
             
               <i id="start" class="fas fa-play btn"></i>

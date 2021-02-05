@@ -31,7 +31,8 @@ input {
   display: none;
 }
 #vol-control {
-  margin-top: 2rem;
+  margin-top: 1.75rem;
+  margin-bottom: 4rem;
 }
 
 .btn {
@@ -79,6 +80,9 @@ input {
 .tracks-main {
   color: #1e87f0 !important;
 }
+.tracks-sub {
+  margin-bottom: 4rem;
+}
 
 .title {
   text-transform: uppercase;
@@ -98,18 +102,6 @@ input {
   color: #1e87f0 !important;
 }
 
-/* timer */
-.dial {
-  height: 25rem;
-  width: 30rem;
-  top: 13.5rem;
-  left: 2.5rem;
-  position: relative;
-}
-
-.custom {
-  margin-top: -22rem;
-}
 @media only screen and (max-width: 1200px) {
   .dial {
     height: 25rem;
@@ -124,7 +116,7 @@ input {
 }
 
 @media only screen and (max-width: 970px) {
-  .dial {
+  .base-timer {
     height: 25rem;
     width: 30rem;
     top: 7.75rem;
@@ -137,7 +129,7 @@ input {
 }
 
 @media only screen and (max-width: 970px) {
-  .dial {
+  .base-timer {
     height: 25rem;
     width: 30rem;
     top: 7.75rem;
@@ -156,7 +148,7 @@ input {
 }
 
 @media only screen and (max-width: 550px) {
-  .dial {
+  .base-timer {
     height: 28rem;
     width: 20rem;
     top: -6rem;
@@ -215,4 +207,38 @@ input[type="range"]::-webkit-slider-thumb {
 }
 input[type="range"]:focus::-webkit-slider-runnable-track {
   background: #1e87f0;
+}
+
+/* timer */
+.base-timer {
+  height: 0rem;
+  width: 28rem;
+  bottom: 24rem;
+  left: 16rem;
+  position: relative;
+}
+.base-timer__svg {
+  transform: scaleX(1);
+}
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: rgba(128, 128, 128, 0.637);
+}
+
+.base-timer__path-remaining {
+  stroke-width: 0.2rem;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+
+.base-timer__path-remaining.arc {
+  color: #1e87f0;
 }

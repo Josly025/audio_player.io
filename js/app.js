@@ -1,6 +1,4 @@
 const search = document.getElementById("search");
-const playBtn = document.getElementById("playBtn");
-const pauseBtn = document.getElementById("pauseBtn");
 const player = document.getElementById("player");
 const searchBtn = document.getElementById("search-btn");
 const audio = document.getElementById("audio");
@@ -16,7 +14,7 @@ const durationInput = document.querySelector("#duration");
 const startButton = document.querySelector("#start");
 const pauseButton = document.querySelector("#pause");
 const circle = document.querySelector("circle");
-
+const play = document.querySelector(".play");
 //number for index of data
 let number = 0;
 let artistOne = "Drake";
@@ -67,7 +65,7 @@ function intialRender() {
       console.log(tracksOne);
       audio.setAttribute("src", `${tracksOne[number].preview}`);
       let outputOne = ` <h1 class="tracks tracks-main">${tracksOne[number].title}</h1>
-             <h2 class="tracks uk-margin-medium-bottom extra">${tracksOne[number].artist.name}</h2>
+             <h2 class="tracks tracks-sub">${tracksOne[number].artist.name}</h2>
                 <div class="uk-inline-clip uk-transition-toggle uk-light" tabindex="0">
              <img id="ablum-cover" class="uk-border-rounded uk-margin-large-top uk-margin-large-bottom" data-src="${tracksOne[number].album.cover_medium}" width="auto" height="100%"  uk-img>
              
@@ -152,28 +150,6 @@ function searchTrack(e) {
   e.preventDefault();
 }
 
-let currentValue = 0;
-
-const perimeter = circle.getAttribute("r") * 2 * Math.PI;
-circle.setAttribute("stroke-dasharray", perimeter);
-
-let duration;
-const timer = new Timer(durationInput, startButton, pauseButton, {
-  onStart(totalDuration) {
-    duration = totalDuration;
-  },
-  onTick(timeRemaining) {
-    circle.setAttribute(
-      "stroke-dashoffset",
-      (perimeter * timeRemaining) / duration - perimeter
-    );
-  },
-  onComplete() {
-    window.clearTimeout();
-    setInterval(this.tick, 1000);
-  },
-});
-
 // Media Query for SVG Element
 const radius = document.getElementsByTagName("circle")[0];
 let circa = window.matchMedia("(max-width: 400px)");
@@ -196,3 +172,68 @@ window.SetVolume = function (val) {
   song.volume = val / 100;
   console.log("After: " + song.volume);
 };
+
+////SVG and Time Variables
+const FULL_DASH_ARRAY = 283;
+const RESET_DASH_ARRAY = `-57 ${FULL_DASH_ARRAY}`;
+let timer = document.querySelector("#base-timer-path-remaining");
+const TIME_LIMIT = 30;
+let timePassed = -1;
+let timeLeft = TIME_LIMIT;
+let timerInterval = null;
+
+function reset() {
+  clearInterval(timerInterval);
+  resetVars();
+  timer.setAttribute("stroke-dasharray", RESET_DASH_ARRAY);
+}
+
+startButton.addEventListener("click", function start(withReset = false) {
+  if (withReset) {
+    resetVars();
+  }
+  audio.play();
+  startTimer();
+});
+
+function startTimer() {
+  timerInterval = setInterval(() => {
+    timePassed = timePassed += 1;
+    timeLeft = TIME_LIMIT - timePassed;
+    setCircleDasharray();
+
+    if (timeLeft === 0) {
+      timeIsUp();
+    }
+  }, 1000);
+}
+
+pauseButton.addEventListener("click", function stop() {
+  audio.pause();
+  clearInterval(timerInterval);
+});
+
+///Time functions
+function timeIsUp() {
+  clearInterval(timerInterval);
+  reset();
+}
+
+function resetVars() {
+  timePassed = -1;
+  timeLeft = TIME_LIMIT;
+  console.log(timePassed, timeLeft);
+}
+
+function calculateTimeFraction() {
+  const rawTimeFraction = timeLeft / TIME_LIMIT;
+  return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
+}
+
+function setCircleDasharray() {
+  const circleDasharray = `${(
+    calculateTimeFraction() * FULL_DASH_ARRAY
+  ).toFixed(0)} 283`;
+  console.log("setCircleDashArray: ", circleDasharray);
+  timer.setAttribute("stroke-dasharray", circleDasharray);
+}
